@@ -1,7 +1,0 @@
-Lokal auf Universell
-Get-ADGroup -Filter * -SearchBase "OU=Test,DC=aikux,DC=local" | Where {$_.Name.Contains("Test_") -and $_.GroupScope -eq "DomainLocal"} | Set-ADGroup -GroupScope 2
-
-Universell auf Global
-Get-ADGroup -Filter * -SearchBase "OU=Test,DC=aikux,DC=local" | Where {$_.Name.Contains("Test_") -and $_.GroupScope -eq "Universal"} | Set-ADGroup -GroupScope 1 
-
-

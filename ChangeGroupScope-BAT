@@ -1,0 +1,7 @@
+Lokal auf Universell
+dsquery group OU=Test,DC=aikux,DC=local > c:\temp\gr.txt
+FOR /F %i in (C:\temp\gr.txt) DO dsmod group %i -scope U 
+
+Universell auf Global
+dsquery group OU=Test,DC=aikux,DC=local > c:\temp\gr.txt
+FOR /F %i in (C:\temp\gr.txt) DO dsmod group %i -scope G 

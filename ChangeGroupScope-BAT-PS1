@@ -1,0 +1,15 @@
+Lokal auf Universell
+dsquery group OU=Test,DC=aikux,DC=local > c:\temp\gr.txt
+$Gr = Get-Content C:\temp\gr.txt
+foreach ($Group in $Gr) {
+    dsmod group $Group -scope U >> c:\temp\log.txt
+    Clear-Variable Group
+} 
+
+Universell auf Global
+dsquery group OU=Test,DC=aikux,DC=local > c:\temp\gr.txt
+$Gr = Get-Content C:\temp\gr.txt
+foreach ($Group in $Gr) {
+    dsmod group $Group -scope G >> c:\temp\log.txt
+    Clear-Variable Group
+} 
